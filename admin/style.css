@@ -1,0 +1,307 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: #22252a;
+    color: #fff;
+}
+/* navbar */
+nav {
+    border-bottom: #fff solid 2px;
+    background: #2d3035;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+  }
+  .main-container {
+    /* ممكن تشيل display: flex منها */
+    /* border-top: #fff solid 2px; */
+    margin-top: 60px;
+  }
+  
+  .sidebar {
+    /* border-top: #fff solid 2px; */
+    border-right: #fff solid 2px;
+    position: fixed;      /* ✅ خليها ثابتة */
+    top: 60px;            /* نفس ارتفاع الـ navbar */
+    left: 0;
+    width: 200px;
+    background-color: #2d3035;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    height: calc(100vh - 60px);  /* طول الشاشة ناقص الهيدر */
+    z-index: 9;
+  }
+  
+  .content {
+    margin-left: 200px;   /* ✅ تسيب مساحة للـ sidebar */
+    flex: 1;
+    background-color: #22252a;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+        
+
+
+
+
+
+
+
+
+  
+
+/* header */
+
+
+.logo ,.logout{
+margin:  10px 80px;
+}
+.logo{
+    margin-top: 15px;
+}
+.logo strong {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.logout-btn{
+    color: aliceblue;
+    background-color: rgb(233, 75, 75);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition:background-color 0.3s;
+}
+.logout-btn:hover {
+    background-color:  rgb(216, 9, 9);
+  }
+
+
+
+
+
+  /* The side navigation menu */
+
+
+  .sidebar span{
+    color: #fff;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 10px 10px 0px;
+    margin: 10px 10px 10px 10px;
+    
+  }
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: #8a8d93;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar .active {
+    background-color: #5c5e60;
+    color: white;
+    border-left: 3px solid #047cf4;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #826f6f;
+    color: white;
+  }
+
+
+  /* add category */
+  .add-category, .add-product ,.edit-category,.edit-product{
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  .add-category h1 label, .add-product h1 label, .edit-category h1 label,.edit-product h1 label {
+    color: #fff;
+  }
+  .add-category form, .add-product form,.edit-category form,.edit-product form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .add-category form input, .add-product form input,.edit-category form input,.edit-product form input{
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+   .select-category{
+    width: 53%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  .add-category form button, .add-product form button,.edit-category form button,.edit-product form button{
+    width: 20%;
+    background-color: rgb(19, 202, 19);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  .add-category form button:hover, .add-product form button:hover {
+    background-color: rgb(62, 138, 62);
+  }
+
+  .categories-list, .products-list, .orders-list{
+    margin: 0 auto;
+    text-align: center;
+
+  }
+   .categories-list table, .products-list table{
+    width: 50%;
+    text-align: center;
+    /* background-color: blue; */
+    margin: 20px auto;
+  } 
+  .products-list table{width: 100%;}
+  .orders-list table{
+    width: 100%;text-align: center;
+  }
+  th, td {
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .categories-list td ,.products-list td ,.orders-list td{
+    background-color: #fff;
+    color: black;
+  }
+  td{
+    background-color: rgb(254, 254, 246);
+      }
+  .edit-btn, .delete-btn{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    color: white;
+  }
+  .edit-btn{
+    background-color: rgb(223 223 28);
+  }
+  .delete-btn{
+    background-color: rgb(237, 26, 26);
+  }
+.edit-btn a {
+    text-decoration: none;
+    color: white;
+}
+.edit-btn:hover{
+    background-color: rgb(97, 97, 19);
+}
+.delete-btn:hover{
+    background-color: rgb(112, 5, 5);
+}
+.categories-list h1, .products-list h1, .orders-list h1{
+    color: #ccc;
+}
+
+
+
+.edit-product-btn, .delete-product-btn{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    color: white;
+  }
+  .edit-product-btn{
+    background-color: rgb(223 223 28);
+  }
+  .delete-product-btn{
+    background-color: rgb(237, 26, 26);
+  }
+.edit-product-btn a {
+    text-decoration: none;
+    color: white;
+}
+.edit-product-btn:hover{
+    background-color: rgb(97, 97, 19);
+}
+.delete-product-btn:hover{
+    background-color: rgb(112, 5, 5);
+}
+  .confirm-order-btn, .reject-order-btn{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    color: white;
+  }
+  .confirm-order-btn{
+    background-color: #047cf4;
+  }
+  .reject-order-btn{
+    background-color: #f40404;
+  }
+  .confirm-order-btn:hover, .reject-order-btn:hover{
+    background-color: #41688f;
+  }
+  .reject-order-btn:hover{
+    background-color: #ad5050;
+  }
+
+
+  .total{
+    background-color: #3e4044;
+    width: 12%;
+    height: 120px;
+    display: inline-block;
+    margin-left: 250px;
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 2);
+    color: #7b7c7d;
+   
+  }
+  .total h4{
+    color: antiquewhite;
+    font-size: 20px;
+  }
