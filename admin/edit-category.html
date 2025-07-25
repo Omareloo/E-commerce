@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <strong>Admin</strong>
+            <strong>Dashboard</strong>
+        </div>
+      <div class="logout">
+        <button class="logout-btn">Logout</button>
+      </div>
+    </nav>
+  
+    <main class="main-container">
+      <aside class="sidebar">
+        <span>Main</span>
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="products.html">Products</a>
+        <a href="orders.html">Orders</a>
+      </aside>
+  
+      <section class="content">
+        <!-- أي محتوى هنا -->
+          <div class="edit-category">
+            <h1>Edit Category</h1>
+            <form action="">
+                <label for="edit-category-name">Update Category Name</label>
+                <input type="text" placeholder="New Category Name">
+                <button type="submit" class="add-category-btn">Update Category</button>
+            </form>
+        </div>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+  
+</html>

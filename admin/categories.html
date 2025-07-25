@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <strong>Admin</strong>
+                <strong>Dashboard</strong>
+            </div>
+            <div class="logout">
+                <button class="logout-btn">Logout</button>
+            </div>
+        </nav>
+    </header>
+    <main class="main-container">
+        <aside class="sidebar">
+            <span>Main</span>
+                <a   href="index.html">Home</a>
+                <a   href="categories.html">categories</a>
+                <a   href="products.html">products</a>
+                <a   href="orders.html">orders</a>
+        </aside>
+        <section class="content">
+            <div class="add-category">
+                <h1>Add New Category</h1>
+                <form action="">
+                    <label for="category-name">Category Name</label>
+                    <input type="text" placeholder="Category Name">
+                    <button type="submit" class="add-category-btn">Add Category</button>
+                </form>
+            </div>
+            <div class="categories-list">
+                <h1>Categories List</h1>
+                <table>
+                    <thead>
+                      <tr>
+                        <th>Category ID</th>
+                        <th>Category Name</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Category 1</td>
+                        <td>
+                            <button class="edit-btn"><a href="edit-category.html">Edit</a></button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Category 1</td>
+                        <td>
+                            <button class="edit-btn"><a href="edit-category.html">Edit</a></button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Category 1</td>
+                        <td>
+                            <button class="edit-btn"><a href="edit-category.html">Edit</a></button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Category 1</td>
+                        <td>
+                            <button class="edit-btn"><a href="edit-category.html">Edit</a></button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Category 1</td>
+                        <td>
+                            <button class="edit-btn"><a href="edit-category.html">Edit</a></button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                  
+            </div>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>

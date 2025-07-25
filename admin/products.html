@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <strong>Admin</strong>
+                <strong>Dashboard</strong>
+            </div>
+            <div class="logout">
+                <button class="logout-btn">Logout</button>
+            </div>
+        </nav>
+    </header>
+    <main class="main-container">
+        <aside class="sidebar">
+            <span>Main</span>
+                <a   href="index.html">Home</a>
+                <a   href="categories.html">categories</a>
+                <a   href="products.html">products</a>
+                <a   href="orders.html">orders</a>
+        </aside>
+        <section class="content">
+            <div class="add-product">
+                <h1>Add New Product</h1>
+                <form action="">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" placeholder="Product Name">
+                    <label for="product-price">Product Price</label>
+                    <input type="number" placeholder="Product Price">
+                    <label for="product-quantity">Product Quantity</label>
+                    <input type="number" placeholder="Product Quantity">
+                    <label for="product-category">Product Category</label>
+                    <select name="product-category" class="select-category" id="product-category">
+                        <option value="1">Category 1</option>
+                        <option value="2">Category 2</option>
+                        <option value="3">Category 3</option>
+                    </select>
+                    <label for="product-image">Product Image</label>
+                    <input type="file" placeholder="Product Image">
+                    <button type="submit" class="add-product-btn">Add Product</button>
+                </form>
+            </div>
+            <div class="products-list">
+                <h1>Products List</h1>
+                <table>
+                    <thead>
+                      <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Product Quantity</th>
+                        <th>Product Image</th>
+                        <th>Product Category</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Product 1</td>
+                        <td>100</td>
+                        <td>10</td>
+                        <td>Product 1.jpg</td>
+                        <td>Category 1</td>
+                        <td>
+                            <button class="edit-product-btn"><a href="edit-product.html">Edit</a></button>
+                            <button class="delete-product-btn">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Product 1</td>
+                        <td>100</td>
+                        <td>10</td>
+                        <td>Product 1.jpg</td>
+                        <td>Category 1</td>
+                        <td>
+                            <button class="edit-product-btn"><a href="edit-product.html">Edit</a></button>
+                            <button class="delete-product-btn">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Product 1</td>
+                        <td>100</td>
+                        <td>10</td>
+                        <td>Product 1.jpg</td>
+                        <td>Category 1</td>
+                        <td>
+                            <button class="edit-product-btn"><a href="edit-product.html">Edit</a></button>
+                            <button class="delete-product-btn">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Product 1</td>
+                        <td>100</td>
+                        <td>10</td>
+                        <td>Product 1.jpg</td>
+                        <td>Category 1</td>
+                        <td>
+                            <button class="edit-product-btn"><a href="edit-product.html">Edit</a></button>
+                            <button class="delete-product-btn">Delete</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+            </div>
+        </section>
+    </main>
+    <!-- <footer style="color: aquamarine;">
+        <p>Copyright &copy; 2025</p>
+        <p>All rights reserved</p>
+        <p>Designed by <a href="https://www.facebook.com/profile.php?id=100000000000000">Ahmed</a></p>
+    </footer> -->
+    <script src="main.js"></script>
+</body>
+</html>
