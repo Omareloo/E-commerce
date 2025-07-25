@@ -4,8 +4,500 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .category-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.category-card {
+  border: 1px solid #ddd;
+  width: 30%;
+  min-width: 250px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.3s;
+}
+
+.category-card:hover {
+  transform: scale(1.02);
+}
+
+.category-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.category-text {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #222;
+}
+
+.category-text h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.category-text p {
+  margin: 5px 0 0;
+  color: #555;
+}
+.product-overview {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.overview-header h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.overview-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.control-btn {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.control-btn span {
+  margin-right: 5px;
+}
+
+.product-categories {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  font-size: 15px;
+}
+
+.product-categories a {
+  text-decoration: none;
+  color: #555;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.product-categories a:hover,
+.product-categories a.active {
+  color: #000;
+  font-weight: bold;
+  border-color: #000;
+}
+
+.product-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.product-card {
+  width: 220px;
+  position: relative;
+  border: 1px solid #eee;
+  padding: 10px;
+  transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.quick-view-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-img:hover .quick-view-btn {
+  opacity: 1;
+}
+
+.product-info {
+  margin-top: 10px;
+}
+
+.product-title {
+  font-size: 15px;
+  color: #222;
+  margin: 0;
+}
+
+.product-price {
+  color: #888;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.wishlist {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 18px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.wishlist:hover {
+  color: red;
+}
+
+.footer {
+  background-color: #222;
+  color: #bbb;
+  padding: 50px 20px 20px;
+  font-family: sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-box {
+  flex: 1 1 200px;
+}
+
+.footer-box h4 {
+  color: white;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 10px;
+}
+
+.footer-box ul li a {
+  text-decoration: none;
+  color: #bbb;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-box ul li a:hover {
+  color: #fff;
+}
+
+.footer-box p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.social-icons a img {
+  width: 20px;
+  margin-right: 10px;
+  filter: grayscale(100%) brightness(1.5);
+  transition: filter 0.3s;
+}
+
+.social-icons a:hover img {
+  filter: grayscale(0%);
+}
+
+.footer-box input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #333;
+  color: #fff;
+  margin-bottom: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.subscribe-btn {
+  background: #7f82ff;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.subscribe-btn:hover {
+  background: #676aff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-bottom a {
+  color: #7f82ff;
+  text-decoration: none;
+}
+
+.payment-icons img {
+  height: 25px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+
+
+
+    </style>
 </head>
 <body>
-    
+    <section class="category-section">
+  <div class="category-card">
+    <div class="category-text">
+      <h2>Women</h2>
+      <p>Spring 2018</p>
+    </div>
+    <img src="https://preview.colorlib.com/theme/cozastore/images/product-08.jpg.webp" alt="Women Category">
+  </div>
+
+  <div class="category-card">
+    <div class="category-text">
+      <h2>Men</h2>
+      <p>Spring 2018</p>
+    </div>
+    <img src="https://preview.colorlib.com/theme/cozastore/images/product-08.jpg.webp" alt="Men Category">
+  </div>
+
+  <div class="category-card">
+    <div class="category-text">
+      <h2>Accessories</h2>
+      <p>New Trend</p>
+    </div>
+    <img src="https://preview.colorlib.com/theme/cozastore/images/product-08.jpg.webp" alt="Accessories">
+  </div>
+</section>
+<br><br>
+<section class="product-overview">
+  <div class="overview-header">
+    <h2>PRODUCT OVERVIEW</h2>
+    <div class="overview-controls">
+      <button class="control-btn">
+        <span>☰</span> Filter
+      </button>
+      <button class="control-btn">
+        <span>🔍</span> Search
+      </button>
+    </div>
+  </div>
+
+  <div class="product-categories">
+    <a href="#" class="active">All Products</a>
+    <a href="#">Women</a>
+    <a href="#">Men</a>
+    <a href="#">Bag</a>
+    <a href="#">Shoes</a>
+    <a href="#">Watches</a>
+  </div>
+</section>
+
+<section class="product-section">
+  <div class="product-card">
+    <div class="product-img">
+      <img src="https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp" alt="Esprit Ruffle Shirt">
+      <button class="quick-view-btn">Quick View</button>
+    </div>
+    <div class="product-info">
+      <p class="product-title">Esprit Ruffle Shirt</p>
+      <p class="product-price">$16.64</p>
+    </div>
+    <span class="wishlist">♡</span>
+  </div>
+
+  <div class="product-card">
+    <div class="product-img">
+      <img src="https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp" alt="Herschel supply">
+      <button class="quick-view-btn">Quick View</button>
+    </div>
+    <div class="product-info">
+      <p class="product-title">Herschel supply</p>
+      <p class="product-price">$35.31</p>
+    </div>
+    <span class="wishlist">♡</span>
+  </div>
+
+  <div class="product-card">
+    <div class="product-img">
+      <img src="https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp" alt="Only Check Trouser">
+      <button class="quick-view-btn">Quick View</button>
+    </div>
+    <div class="product-info">
+      <p class="product-title">Only Check Trouser</p>
+      <p class="product-price">$25.50</p>
+    </div>
+    <span class="wishlist">♡</span>
+  </div>
+
+  <div class="product-card">
+    <div class="product-img">
+      <img src="https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp" alt="Classic Trench Coat">
+      <button class="quick-view-btn">Quick View</button>
+    </div>
+    <div class="product-info">
+      <p class="product-title">Classic Trench Coat</p>
+      <p class="product-price">$75.00</p>
+    </div>
+    <span class="wishlist">♡</span>
+  </div>
+
+   <div class="product-card">
+    <div class="product-img">
+      <img src="https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp" alt="Classic Trench Coat">
+      <button class="quick-view-btn">Quick View</button>
+    </div>
+    <div class="product-info">
+      <p class="product-title">Classic Trench Coat</p>
+      <p class="product-price">$75.00</p>
+    </div>
+    <span class="wishlist">♡</span>
+  </div> <div class="product-card">
+    <div class="product-img">
+      <img src="https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp" alt="Classic Trench Coat">
+      <button class="quick-view-btn">Quick View</button>
+    </div>
+    <div class="product-info">
+      <p class="product-title">Classic Trench Coat</p>
+      <p class="product-price">$75.00</p>
+    </div>
+    <span class="wishlist">♡</span>
+  </div> <div class="product-card">
+    <div class="product-img">
+      <img src="https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp" alt="Classic Trench Coat">
+      <button class="quick-view-btn">Quick View</button>
+    </div>
+    <div class="product-info">
+      <p class="product-title">Classic Trench Coat</p>
+      <p class="product-price">$75.00</p>
+    </div>
+    <span class="wishlist">♡</span>
+  </div> <div class="product-card">
+    <div class="product-img">
+      <img src="https://preview.colorlib.com/theme/cozastore/images/product-01.jpg.webp" alt="Classic Trench Coat">
+      <button class="quick-view-btn">Quick View</button>
+    </div>
+    <div class="product-info">
+      <p class="product-title">Classic Trench Coat</p>
+      <p class="product-price">$75.00</p>
+    </div>
+    <span class="wishlist">♡</span>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-box">
+      <h4>CATEGORIES</h4>
+      <ul>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Shoes</a></li>
+        <li><a href="#">Watches</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-box">
+      <h4>HELP</h4>
+      <ul>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-box">
+      <h4>GET IN TOUCH</h4>
+      <p>
+        Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+      </p>
+      <div class="social-icons">
+        <a href="#"><img src="images/facebook.png" alt="fb" /></a>
+        <a href="#"><img src="images/instagram.png" alt="ig" /></a>
+        <a href="#"><img src="images/pinterest.png" alt="pt" /></a>
+      </div>
+    </div>
+
+    <div class="footer-box">
+      <h4>NEWSLETTER</h4>
+      <input type="email" placeholder="email@example.com">
+      <button class="subscribe-btn">SUBSCRIBE</button>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="payment-icons">
+      <img src="images/paypal.png" alt="paypal">
+      <img src="images/visa.png" alt="visa">
+      <img src="images/mastercard.png" alt="mastercard">
+      <img src="images/amex.png" alt="amex">
+      <img src="images/discover.png" alt="discover">
+    </div>
+    <p>Copyright ©2025 All rights reserved | This template is made with ♡ by <a href="#">Colorlib</a></p>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+
+
+
 </body>
 </html>
