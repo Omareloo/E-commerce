@@ -1,12 +1,35 @@
-/*
-Viewing all products from Firestore
+// const quickViewBox = document.getElementById("quickViewBox");
+// const quickViewOverlay = document.getElementById("quickViewOverlay");
+// const closePopup = document.getElementById("closePopup");
 
-Filter by category
+// const popupImg = document.getElementById("popupImg");
+// const popupTitle = document.getElementById("popupTitle");
+// const popupPrice = document.getElementById("popupPrice");
 
-Add to cart (localStorage)
+// const quickViewButtons = document.querySelectorAll(".quick-view-btn");
 
-Add to wishlist (localStorage)
-*/
+// quickViewButtons.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     const product = btn.closest(".product-card");
+//     const imgSrc = product.querySelector("img").getAttribute("src");
+//     const title = product.querySelector("h3").innerText;
+//     const price = product.querySelector(".price").innerText;
 
+//     popupImg.setAttribute("src", imgSrc);
+//     popupTitle.innerText = title;
+//     popupPrice.innerText = price;
 
-console.log("customer.js");
+//     quickViewBox.style.display = "block";
+//     quickViewOverlay.style.display = "block";
+//   });
+// });
+
+// closePopup.addEventListener("click", () => {
+//   quickViewBox.style.display = "none";
+//   quickViewOverlay.style.display = "none";
+// });
+
+// quickViewOverlay.addEventListener("click", () => {
+//   quickViewBox.style.display = "none";
+//   quickViewOverlay.style.display = "none";
+// });
