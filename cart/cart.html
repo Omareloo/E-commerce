@@ -3,9 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="cartstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Cart Page</title>
 </head>
 <body>
-    
+            <!--nav-->
+    <nav>
+        <div>
+        <a href="###"><img src="images/logo-01.png.webp" alt="logo-site" title="the logo"></a>
+        <a class="links" href="##">Home</a>
+        <a class="links" href="##">Shop</a>
+        <a class="links" href="##">Features</a>
+        <a class="links" href="#">Blog</a>
+        <a class="links" href="#">About</a>
+        <a class="links" href="#">Contact</a>
+        </div>
+        <div class="icons">
+        <a href="###"><i class="fas fa-search"></i></a>
+        <a href="###"><i class="fas fa-shopping-cart"></i></a>
+        <a href="###"><i class="fas fa-heart"></i></a>
+        </div>
+    </nav>
+        <br>
+        <hr>
+            <!--body wished product-->
+<div class="cart-container">
+    <div class="table-header">
+        <div class="col-product">PRODUCT</div>
+        <div class="col-price">PRICE</div>
+        <div class="linequantity">QUANTITY</div>
+        <div class="col-total">TOTAL</div>
+    </div>
+    <div class="cart-item">
+        <div class="col-product">
+            <img src="images/item-cart-04.jpg.webp" alt="Product Image">
+            <span>Fresh Strawberries</span>
+        </div>
+        <div class="col-price">$ 36.00</div>
+        <div class="col-quantity">
+            <button class="quantity-btn">-</button>
+            <input type="number" value="1" class="quantity-input">
+            <button class="quantity-btn">+</button>
+        </div>
+        <div class="col-total">$ 36.00</div>
+    </div>
+    <div class="cart-item">
+        <div class="col-product">
+            <img src="images/item-cart-05.jpg.webp" alt="Product Image">
+            <span>Lightweight Jacket</span>
+        </div>
+        <div class="col-price">$ 16.00</div>
+        <div class="col-quantity">
+            <button class="quantity-btn">-</button>
+            <input type="number" value="1" class="quantity-input">
+            <button class="quantity-btn">+</button>
+        </div>
+        <div class="col-total">$ 16.00</div>
+    </div>
+    <div class="cart-footer">
+        <input class="coupon-input" type="text" placeholder="Coupon Code">
+        <button class="apply-btn">Continue Shopping</button>
+        <button class="update-btn">UPDATE CART</button>
+    </div>
+</div>
+            <!--cart total-->
+        <aside class="aside-cart">
+        <h2 class="aside-title">CART TOTALS</h2>
+        <div class="aside-section">
+            <div class="aside-row">
+                <span>Subtotal</span>
+                <span>$79.65</span>
+            </div>
+        </div>
+        <div class="aside-section shipping-section">
+            <div class="aside-row">
+                <span>Shipping</span>
+                <div class="shipping-details">
+                    <p class="shipping-info">There are no shipping methods available. Please double check your address, or contact us if you need any help.</p>
+                    <h3 class="calculate-shipping">CALCULATE SHIPPING</h3>
+                    <select class="shipping-select">
+                        <option>Choose The country</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="Saudia">Saudia</option>
+                        <option value="United States">United States</option>
+                    </select>
+                    <input type="text" placeholder="State / country" class="shipping-input">
+                    <input type="text" placeholder="Postcode / Zip" class="shipping-input">
+                    <button class="update-totals-btn">UPDATE TOTALS</button>
+                </div>
+            </div>
+        </div>
+        <div class="aside-section total-section">
+            <div class="aside-row total-row">
+                <span>Total: </span>
+                <span>$79.65</span>
+            </div>
+        </div>
+        <button class="proceed-to-checkout-btn">PROCEED TO CHECKOUT</button>
+    </aside>
+
 </body>
 </html>
