@@ -1,3 +1,7 @@
+
+
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyD9x4LGO8jrIShzyguY8mJ_CQ5lO2cm05Q",
     authDomain: "e-commerce-21ae3.firebaseapp.com",
@@ -10,6 +14,5 @@ const firebaseConfig = {
 
 
   firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+// const auth = firebase.auth();
 const db = firebase.firestore();
-const storage = firebase.storage();

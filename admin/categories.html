@@ -11,7 +11,7 @@
         <nav>
             <div class="logo">
                 <strong>Admin</strong>
-                <strong>Dashboard</strong>
+                <strong class="dashboard">Dashboard</strong>
             </div>
             <div class="logout">
                 <button class="logout-btn">Logout</button>
@@ -31,8 +31,9 @@
                 <h1>Add New Category</h1>
                 <form action="">
                     <label for="category-name">Category Name</label>
-                    <input type="text" placeholder="Category Name">
-                    <button type="submit" class="add-category-btn">Add Category</button>
+                    <input type="text" id="category-name" placeholder="Category Name">
+                    <span></span>
+                    <button type="submit" class="add-category-btn" id="add-category-btn">Add Category</button>
                 </form>
             </div>
             <div class="categories-list">
@@ -93,6 +94,15 @@
             </div>
         </section>
     </main>
+    <!-- Firebase App (compat version) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<!-- Firebase Firestore -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+<script src="../firebase_conf.js">
+  
+</script>
+
     <script src="main.js"></script>
 </body>
 </html>

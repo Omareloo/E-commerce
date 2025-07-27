@@ -79,6 +79,9 @@ margin:  10px 80px;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+.logo .dashboard{
+  color: #f40404;
+}
 .logout-btn{
     color: aliceblue;
     background-color: rgb(233, 75, 75);
