@@ -14,3 +14,19 @@
       }
     });
   });
+  
+
+
+
+  /////////////////////////////CATEGORY JS /////////////////////////////////
+
+  //  var addCategoryBtn = document.getElementById("add-category-btn");
+  //  var categoryName = document.getElementById("category-name");
+
+  
+
+
+
+
+
+
