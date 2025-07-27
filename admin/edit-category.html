@@ -31,14 +31,23 @@
         <!-- أي محتوى هنا -->
           <div class="edit-category">
             <h1>Edit Category</h1>
-            <form action="">
+            <form>
                 <label for="edit-category-name">Update Category Name</label>
-                <input type="text" placeholder="New Category Name">
+                <input type="text" placeholder="New Category Name" id="edit-category-name">
+                <span></span>
                 <button type="submit" class="add-category-btn">Update Category</button>
             </form>
         </div>
       </section>
     </main>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<!-- Firebase Firestore -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+<script src="../firebase_conf.js">
+  
+</script>
+
     <script src="main.js"></script>
   </body>
   
