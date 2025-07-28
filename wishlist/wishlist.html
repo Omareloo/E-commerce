@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="wishlist.css">
+    <title>WishList Page</title>
+</head>
+<body>
+    <!-- Main Menu -->
+    <div class="main-menu">
+    <div class="container">
+    <div class="menu-content">
+        <a href="#" class="logo">COZA STORE</a>
+        <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Features</a>
+        <a href="#">Blog</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <div class="nav-icons">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="#"><i class="fas fa-search"></i></a>
+        </div>
+        <a href="../auth/login.html"><button class="btnlogin">login </button></a>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!--wish list table-->
+    <div class="wishlist-container">
+    <div class="table-header">
+        <div class="col-product">PRODUCT</div>
+        <div class="col-price">PRICE</div>
+        <div class="lineprocedures">Procedures</div>
+    </div>
+    <div class="cart-item">
+        <div class="col-product">
+            <img src="images/item-cart-04.jpg.webp" alt="Product Image">
+            <span>Fresh Strawberries</span>
+        </div>
+        <div class="col-price">$ 36.00</div>
+        <div class="col-procedures">
+            <button class="col-procedures-btn">Add To Shopping cart</button>
+            <button class="col-procedures-btnre">Remove From Wish List</button>
+        </div>
+    </div>
+    <div class="cart-item">
+        <div class="col-product">
+            <img src="images/item-cart-05.jpg.webp" alt="Product Image">
+            <span>Lightweight Jacket</span>
+        </div>
+        <div class="col-price">$ 16.00</div>
+        <div class="col-procedures">
+            <button class="col-procedures-btn">Add To Shopping cart</button>
+            <button class="col-procedures-btnre">Remove From Wish List</button>
+        </div>
+    </div>
+    <div class="wishlist-actions">
+        <button class="remove-btn">Remove All Wish List Elements</button>
+        <button class="continue-btn">Continue Shopping</button>
+    </div>
+
+    </div>
+    <!-- aside section-->
+    <aside class="wishlist-summary-section">
+                <h3 class="section-title"> Wish List Options  </h3>
+                <hr>
+                <div class="summary-item">
+                    <span> Element in Wish List : </span>
+                    <span class="summary-value">2</span>
+                    
+                </div>
+                <div class="summary-actions">
+                    <button class="btn btn-primary share-wishlist-btn">Share The Wish List</button>
+                    <button class="btn btn-primary email-wishlist-btn">Send Email To Friend</button>
+                </div>
+
+                <div class="summary-footer">
+                    <button class="btn btn-primary proceed-checkout-btn">Continue To Buy</button>
+                </div>
+    </aside>
+    
+</body>
+</html>
