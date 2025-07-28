@@ -1,54 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <strong>Admin</strong>
-            <strong class="dashboard">Dashboard</strong>
-        </div>
-      <div class="logout">
-        <button class="logout-btn">Logout</button>
+  <nav class="navbar">
+    <div class="logo">
+      <strong>Admin</strong>
+      <strong class="dashboard">Dashboard</strong>
+    </div>
+    <div class="logout">
+      <button class="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <main class="main-container">
+    <aside class="sidebar">
+      <span>Main</span>
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+      <a href="products.html">Products</a>
+      <a href="orders.html">Orders</a>
+    </aside>
+
+    <section class="content">
+      <!-- أي محتوى هنا -->
+      <div class="edit-category">
+        <h1>Edit Category</h1>
+        <form id="edit-category-form">
+          <label for="edit-category-name">Update Category Name</label>
+          <input type="text" placeholder="New Category Name" id="edit-category-name" />
+          <span class="error-msg"></span>
+          <button type="submit" class="add-category-btn">Update Category</button>
+        </form>
+
       </div>
-    </nav>
-  
-    <main class="main-container">
-      <aside class="sidebar">
-        <span>Main</span>
-        <a href="index.html">Home</a>
-        <a href="categories.html">Categories</a>
-        <a href="products.html">Products</a>
-        <a href="orders.html">Orders</a>
-      </aside>
-  
-      <section class="content">
-        <!-- أي محتوى هنا -->
-          <div class="edit-category">
-            <h1>Edit Category</h1>
-            <form>
-                <label for="edit-category-name">Update Category Name</label>
-                <input type="text" placeholder="New Category Name" id="edit-category-name">
-                <span></span>
-                <button type="submit" class="add-category-btn">Update Category</button>
-            </form>
-        </div>
-      </section>
-    </main>
-    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-<!-- Firebase Firestore -->
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    </section>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <!-- Firebase Firestore -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 
-<script src="../firebase_conf.js">
-  
-</script>
+  <script src="../firebase_conf.js">
 
-    <script src="main.js"></script>
-  </body>
+  </script>
   
+
+  <script src="main.js"></script>
+</body>
+
 </html>
