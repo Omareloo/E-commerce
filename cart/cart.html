@@ -12,11 +12,11 @@
     <div class="main-menu">
     <div class="container">
     <div class="menu-content">
-        <a href="#" class="logo">COZA STORE</a>
+        <a href="../home/index.html" target="_blank" class="logo">COZA STORE</a>
         <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">Features</a>
+        <a href="../home/index.html" target="_blank">Home</a>
+        <a href="../home/index.html" target="_blank">Shop</a>
+        <a href="../home/index.html" target="_blank">Features</a>
         <a href="#">Blog</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
@@ -40,6 +40,8 @@
     </div>
     <div class="cart-item">
         <div class="col-product">
+            <button class="accept-btn">&#10003;</button>
+            <span class="remove-btn">&times;</span>
             <img src="images/item-cart-04.jpg.webp" alt="Product Image">
             <span>Fresh Strawberries</span>
         </div>
@@ -53,6 +55,8 @@
     </div>
     <div class="cart-item">
         <div class="col-product">
+            <button class="accept-btn">&#10003;</button>
+            <span class="remove-btn">&times;</span>
             <img src="images/item-cart-05.jpg.webp" alt="Product Image">
             <span>Lightweight Jacket</span>
         </div>
@@ -66,45 +70,19 @@
     </div>
     <div class="cart-footer">
         <input class="coupon-input" type="text" placeholder="Coupon Code">
-        <button class="apply-btn">Continue Shopping</button>
-        <button class="update-btn">UPDATE CART</button>
+        <button class="Continue-btn">Continue Shopping</button>
     </div>
 </div>
             <!--cart total-->
         <aside class="aside-cart">
         <h2 class="aside-title">CART TOTALS</h2>
-        <div class="aside-section">
-            <div class="aside-row">
-                <span>Subtotal</span>
-                <span>$79.65</span>
-            </div>
-        </div>
-        <div class="aside-section shipping-section">
-            <div class="aside-row">
-                <span>Shipping</span>
-                <div class="shipping-details">
-                    <p class="shipping-info">There are no shipping methods available. Please double check your address, or contact us if you need any help.</p>
-                    <h3 class="calculate-shipping">CALCULATE SHIPPING</h3>
-                    <select class="shipping-select">
-                        <option>Choose The country</option>
-                        <option value="Egypt">Egypt</option>
-                        <option value="Saudia">Saudia</option>
-                        <option value="United States">United States</option>
-                    </select>
-                    <input type="text" placeholder="State / country" class="shipping-input">
-                    <input type="text" placeholder="Postcode / Zip" class="shipping-input">
-                    <button class="update-totals-btn">UPDATE TOTALS</button>
-                </div>
-            </div>
-        </div>
-        <div class="aside-section total-section">
-            <div class="aside-row total-row">
+            <div class="total-row">
                 <span>Total: </span>
-                <span>$79.65</span>
+                <span>$52.00</span>
             </div>
-        </div>
-        <button class="proceed-to-checkout-btn">PROCEED TO CHECKOUT</button>
+        <button class="proceed-btn">PROCEED TO CHECKOUT</button>
     </aside>
 
+    <script src="cartscript.js"></script>
 </body>
 </html>
