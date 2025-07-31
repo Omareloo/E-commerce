@@ -86,3 +86,36 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".cart-item").forEach(updateItemTotal);
     updateCartTotal();
 });
+async function loadCartItems() {
+  const cartSection = document.querySelector(".cart-section");
+  cartSection.innerHTML = "";
+
+  try {
+    const snapshot = await db.collection("cart").get();
+
+    snapshot.forEach((doc) => {
+      const item = doc.data();
+
+      const card = document.createElement("div");
+      card.className = "product-card";
+      card.innerHTML = `
+        <div class="product-img">
+          <img src="${item.imageUrl}" alt="${item.name}" />
+        </div>
+        <div class="product-info">
+          <p class="product-title">${item.name}</p>
+          <p class="product-price">$${item.price}</p>
+          <p class="product-qty">Quantity: ${item.quantity}</p>
+        </div>
+      `;
+
+      cartSection.appendChild(card);
+    });
+  } catch (error) {
+    console.error("Error loading cart items:", error);
+  }
+}
+
+
+
+loadCartItems();

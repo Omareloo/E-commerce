@@ -1,40 +1,3 @@
-// const quickViewBox = document.getElementById("quickViewBox");
-// const quickViewOverlay = document.getElementById("quickViewOverlay");
-// const closePopup = document.getElementById("closePopup");
-
-// const popupImg = document.getElementById("popupImg");
-// const popupTitle = document.getElementById("popupTitle");
-// const popupPrice = document.getElementById("popupPrice");
-
-// const quickViewButtons = document.querySelectorAll(".quick-view-btn");
-
-// quickViewButtons.forEach((btn) => {
-//   btn.addEventListener("click", () => {
-//     const product = btn.closest(".product-card");
-//     const imgSrc = product.querySelector("img").getAttribute("src");
-//     const title = product.querySelector("h3").innerText;
-//     const price = product.querySelector(".price").innerText;
-
-//     popupImg.setAttribute("src", imgSrc);
-//     popupTitle.innerText = title;
-//     popupPrice.innerText = price;
-
-//     quickViewBox.style.display = "block";
-//     quickViewOverlay.style.display = "block";
-//   });
-// });
-
-// closePopup.addEventListener("click", () => {
-//   quickViewBox.style.display = "none";
-//   quickViewOverlay.style.display = "none";
-// });
-
-// quickViewOverlay.addEventListener("click", () => {
-//   quickViewBox.style.display = "none";
-//   quickViewOverlay.style.display = "none";
-// });
-
-
  let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-item');
     const indicators = document.querySelectorAll('.indicator');
@@ -64,8 +27,6 @@
       moveSlide(1);
     }, 5000);
 
-
-
     
 
     async function loadProducts() {
@@ -76,6 +37,7 @@
     const snapshot = await db.collection("products").get();
     snapshot.forEach((doc) => {
       const product = doc.data();
+      const productId = doc.id;
 
       const card = document.createElement("div");
       card.className = "product-card";
@@ -87,16 +49,136 @@
         <div class="product-info">
           <p class="product-title">${product.name}</p>
           <p class="product-price">$${product.price}</p>
+          <button class="add-to-cart-btn" data-id="${productId}">Add to Cart</button>
         </div>
-        <span class="wishlist">♡</span>
+<button class="add-to-wishlist-btn" data-id="PRODUCT_ID">🤍 Add to Wishlist</button>
       `;
 
       productSection.appendChild(card);
     });
+
+//////////////////////////////////////
+
+    const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+    addToCartButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.id;
+       alert("Added to cart:", id);
+      });
+    });
+
   } catch (error) {
     console.error("Error loading products:", error);
   }
 }
 
-// Load products on page load
-loadProducts();
+// utility: يحمّل منتجات مع فلترة حسب الفئة (category)
+async function loadProducts(category = "all") {
+  const productSection = document.querySelector(".product-section");
+  productSection.innerHTML = "";
+
+  try {
+    let query = db.collection("products");
+    if (category && category !== "all") {
+      query = query.where("category", "==", category);
+    }
+
+    const snapshot = await query.get();
+
+    if (snapshot.empty) {
+      productSection.innerHTML = "<p>No products found in this category.</p>";
+      return;
+    }
+
+    snapshot.forEach((doc) => {
+      const product = doc.data();
+      const productId = doc.id;
+
+      const card = document.createElement("div");
+      card.className = "product-card";
+
+      card.innerHTML = `
+        <div class="product-img">
+          <img src="${product.imageUrl}" alt="${product.name}" />
+          <button class="quick-view-btn">Quick View</button>
+        </div>
+        <div class="product-info">
+          <p class="product-title">${product.name}</p>
+          <p class="product-price">$${product.price}</p>
+          <button class="add-to-cart-btn" data-id="${productId}">Add to Cart</button>
+          <button class="wishlist-btn" data-id="${productId}" aria-label="Add to wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+        </div>
+      `;
+
+      productSection.appendChild(card);
+
+      // Add to Cart
+      const addToCartBtn = card.querySelector(".add-to-cart-btn");
+      addToCartBtn.addEventListener("click", async () => {
+        try {
+          const productRef = db.collection("products").doc(productId);
+          const productDoc = await productRef.get();
+          if (productDoc.exists) {
+            const productData = productDoc.data();
+            await db.collection("cart").add(productData);
+            alert("✅ Product added to cart:", productData.name);
+          }
+        } catch (err) {
+          console.error("Error adding to cart:", err);
+        }
+      });
+
+      // Wishlist toggle + add
+      const wishlistBtn = card.querySelector(".wishlist-btn");
+      wishlistBtn.addEventListener("click", async () => {
+        try {
+          const productRef = db.collection("products").doc(productId);
+          const productDoc = await productRef.get();
+          if (!productDoc.exists) return;
+          const productData = productDoc.data();
+
+          if (wishlistBtn.classList.contains("active")) {
+            // لو عايز تحذف من الـ wishlist لازم تحفظ الـ doc id وترجع تحذفه
+            wishlistBtn.classList.remove("active");
+            wishlistBtn.innerHTML = `<i class="fa-regular fa-heart"></i>`;
+          } else {
+            wishlistBtn.classList.add("active");
+            wishlistBtn.innerHTML = `<i class="fa-solid fa-heart"></i>`;
+            await db.collection("wishlist").add(productData);
+            alert("💖 Product added to wishlist:", productData.name);
+          }
+        } catch (err) {
+          console.error("Error toggling wishlist:", err);
+        }
+      });
+    });
+  } catch (error) {
+    console.error("Error loading products:", error);
+  }
+}
+/////////////////////////////////////////////////////// fillter//////////////////////
+
+
+const categoryLinks = document.querySelectorAll(".product-categories a");
+categoryLinks.forEach((link) => {
+  link.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    // تفعيل الـ active class
+    categoryLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+
+    // نجيب النص، ونعالجه عشان "All Products" تبقى all
+    let categoryText = link.textContent.trim().toLowerCase();
+    if (categoryText === "all products") categoryText = "all";
+
+    await loadProducts(categoryText);
+  });
+});
+
+// تحميل افتراضي (كل المنتجات)
+loadProducts("all");
+
+
