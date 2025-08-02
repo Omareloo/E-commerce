@@ -18,7 +18,7 @@
       <div class="menu-content">
         <a href="#" class="logo">COZA STORE</a>
         <div class="nav-links">
-          <a href="#">Home</a>
+          <a href="index.html">Home</a>
           <a href="#">Shop</a>
           <a href="#">Features</a>
           <a href="#">Blog</a>
@@ -29,7 +29,10 @@
             <a href="#"><i class="fas fa-heart"></i></a>
             <a href="#"><i class="fas fa-search"></i></a>
           </div>
-          <a href="../auth/login.html"><button class="btnlogin">login </button></a>
+ <a href="../auth/login.html" id="authLink">
+  <button class="btnlogin" id="authButton">Login</button>
+</a>
+
           
         </div>
       </div>
@@ -215,10 +218,40 @@
         </div>
       </div>
     </div>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script> <!-- ✅ أضف هذا -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="../firebase_conf.js"></script>
+<script src="customer.js"></script>
 
-     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-  <script src="../firebase_conf.js"></script>
-    <script src="customer.js"></script>
+<script>
+  firebase.auth().onAuthStateChanged(function(user) {
+    const authLink = document.getElementById('authLink');
+    const authButton = document.getElementById('authButton');
+
+    if (user) {
+      authButton.textContent = 'Logout';
+      authLink.removeAttribute('href');
+
+      authLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        firebase.auth().signOut()
+          .then(() => {
+            alert("Logged out successfully.");
+            window.location.reload();
+          })
+          .catch((error) => {
+            alert("Logout failed: " + error.message);
+          });
+      });
+
+    } else {
+      authButton.textContent = 'Login';
+      authLink.setAttribute('href', '../auth/login.html');
+    }
+  });
+</script>
+
+
   </body>
 </html>
