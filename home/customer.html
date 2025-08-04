@@ -17,14 +17,14 @@
           <a href="#" class="logo">COZA STORE</a>
           <div class="nav-links">
             <a href="#">Home</a>
-            <a href="../cart/cart.html">Shop</a>
+            <a href="#">Shop</a>
             <a href="#">Features</a>
             <a href="#">Blog</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
             <div class="nav-icons">
-              <a href="#"><i class="fas fa-shopping-cart"></i></a>
-              <a href="#"><i class="fas fa-heart"></i></a>
+              <a href="../cart/cart.html"><i class="fas fa-shopping-cart"></i></a>
+              <a href="../wishlist/wishlist.html"><i class="fas fa-heart"></i></a>
               <a href="#"><i class="fas fa-search"></i></a>
             </div>
             <a href="../auth/login.html"><button class="btnlogin">loout </button></a>
@@ -70,89 +70,39 @@
       </div>
     </div>
 
-    <!-- Category Section
-    <section class="category-section">
-      <div class="category-card">
-        <div class="category-text">
-          <h2>Women</h2>
-          <p>Spring 2018</p>
-        </div>
-        <img src="https://preview.colorlib.com/theme/cozastore/images/product-08.jpg.webp" alt="Women Category" />
-      </div>
-      <div class="category-card">
-        <div class="category-text">
-          <h2>Men</h2>
-          <p>Spring 2018</p>
-        </div>
-        <img src="https://preview.colorlib.com/theme/cozastore/images/product-08.jpg.webp" alt="Men Category" />
-      </div>
-      <div class="category-card">
-        <div class="category-text">
-          <h2>Accessories</h2>
-          <p>New Trend</p>
-        </div>
-        <img src="https://preview.colorlib.com/theme/cozastore/images/product-08.jpg.webp" alt="Accessories" />
-      </div>
-    </section> -->
-
+   
     <section class="product-overview">
       <div class="overview-header">
         <h2>PRODUCT OVERVIEW</h2>
         <div class="overview-controls">
-          <button class="control-btn"><span>☰</span> Filter</button>
-          <button class="control-btn"><span>🔍</span> Search</button>
+         
         </div>
       </div>
      <div class="product-categories">
   <a href="#" class="active" data-category="all">All Products</a>
-  <a href="#" data-category="women">Women</a>
-  <a href="#" data-category="men">Men</a>
-  <a href="#" data-category="accessories">Accessories</a>
+  <a href="#" data-category="Women">Women</a>
+  <a href="#" data-category="Mens">Men</a>
+  <a href="#" data-category="Ring">Rings</a>
   <a href="#" data-category="shoes">Shoes</a>
-  <a href="#" data-category="watches">Watches</a>
+  <a href="#" data-category="Watches">Watches</a>
 </div>
 
     </section>
 
-    <!-- Dynamic Product Section -->
     <section class="product-section" id="productsContainer">
-      <!-- Products will be injected here by Firebase -->
        <table class="products-list">
   <tbody></tbody>
 </table>
 
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-      <!-- [unchanged footer code] -->
     </footer>
 
-    <!-- Product Popup -->
-    <div id="product-popup" class="popup-overlay">
-      <div class="popup-box">
-        <a href="#" class="close-btn">×</a>
-        <div class="popup-content">
-          <div class="popup-image">
-            <img src="./smiley.png" alt="Product" />
-          </div>
-          <div class="popup-details">
-            <h2>My Product Title</h2>
-            <p class="popup-price">$19.99</p>
-            <p class="popup-desc">This is a fixed product description. Add anything you like here.</p>
-<button class="add-to-cart-btn" data-id="${productId}">Add to Cart</button>
-<button class="add-to-wishlist-btn" data-id="PRODUCT_ID">🤍 Add to Wishlist</button>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ✅ Firebase v8 - الطريقة الكلاسيكية -->
+    
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
   <script src="../../firebase_conf.js"></script>
-<!-- ملف جافاسكريبت بتاعك -->
 <script src="customer.js" defer></script>
 
   </body>

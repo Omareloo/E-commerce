@@ -11,7 +11,6 @@
       text-decoration: none;
       color: inherit;
     }
-    /* Main Menu */
     .main-menu {
       padding: 17px 0;
       border-bottom: 1px solid #eee;
@@ -70,8 +69,7 @@
     .btnlogin:hover {
       background-color: #5a6bd1;
     }
-     /*cart */
-.cart-container {
+.card-container {
   background-color: #fff; 
   border-radius: 8px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -83,10 +81,9 @@
   float: left;
     
 }
-
 .table-header {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr; 
+  grid-template-columns: 2fr 0.5fr 1fr 1fr 1fr;
   padding: 15px 20px;
   border-bottom: 1px solid #eee;
   font-weight: 800px;
@@ -94,35 +91,16 @@
   text-transform: uppercase; 
   font-size: 0.9em;
 }
-.cart-item {
+.card-item {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 0.5fr 1fr 1fr 1fr;
   align-items: center; 
   padding: 20px;
   border-bottom: 1px solid #eee;
   height: 150px;
   position: relative;
 }
-.accept-btn {
-    background-color: #e1e1e1;
-    border: none;
-    padding: 12px 10px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    color: black;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    transition: background-color 0.2s ease;
-    position: absolute;
-    left: 6px;
-    top: 25px;
-}
-.accept-btn:hover {
-    border-color: green;
-    background-color: green;
-    color: #fff;
-}
+
 .remove-btn {
     background-color: #e1e1e1;
     border: none;
@@ -136,14 +114,16 @@
     transition: background-color 0.2s ease;
     position: absolute;
     left: 6px;
-    top: 78px;
+    top: 50px;
 }
 .remove-btn:hover {
     border-color:red;
     background-color:red;
     color: #fff;
 }
-
+.col-id{
+word-break: break-all;
+}
 .col-product {
   display: flex;
   align-items: center;
@@ -156,7 +136,6 @@
   object-fit: cover; 
   border-radius: 4px;
 }
-
 .col-price, .col-total {
   text-align: center; 
   font-weight: bold;
@@ -224,6 +203,24 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 1em;
   max-width: 250px;
 }
+.removeall-btn {
+  background-color: #e1e1e1;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  transition: background-color  0.4s ease;
+  margin-left: 20px;
+}
+.removeall-btn:hover {
+    border-color: red;
+    background-color: red;
+    color: #fff;
+}
 .Continue-btn {
   background-color: #e1e1e1;
   border: none;
@@ -234,15 +231,14 @@ input[type="number"]::-webkit-inner-spin-button {
   color: black;
   text-transform: uppercase;
   font-size: 0.9em;
-  transition: background-color  0.2s ease;
-  margin-left: 20px;
+  transition: background-color  0.4s ease;
+  margin-left: 200px;
 }
 .Continue-btn:hover {
     border-color: #717fe0;
     background-color: #717fe0;
     color: #fff;
 }
-/*aside section*/
 .aside-cart {
   background-color: #fff;
   border-radius: 8px; 
@@ -290,15 +286,6 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-top: 20px; 
 }
 .proceed-btn:hover {
-  background-color: #717fe0;
+    background-color: rgb(164, 105, 105);
+    color: white;
 }
-
-
-
-
-
-
-
-
-
-

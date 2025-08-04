@@ -11,7 +11,9 @@ window.addEventListener("DOMContentLoaded", () => {
       link.classList.remove("active");
     }
   });
-
+  getOrdersCount();
+  getUsersCount();
+  getProductCount();
   loadCategories(); // تحميل التصنيفات
 });
 
@@ -47,6 +49,7 @@ if (addCategoryBtn && categoryForm) {
     }
   });
 }
+
 
 // ✅ تحميل التصنيفات في الجدول
 async function loadCategories() {
@@ -133,3 +136,37 @@ if (editForm && editInput && categoryId) {
     }
   });
 }
+async function getProductCount() {
+  try {
+    const snapshot = await db.collection("products").get();
+    // console.log(snapshot); // Optional debug
+    const count = snapshot.size;
+    document.getElementById("productsCount").textContent = count;
+  } catch (error) {
+    console.error("Error:", error);
+    // document.getElementById("productCount").textContent = "Error loading count";
+  }
+}
+async function getOrdersCount(){
+  try{
+    const snapshot = await db.collection("orders").get();
+      console.log(snapshot)
+    const count = snapshot.size;
+    document.getElementById("ordersCount").textContent = count ;
+  }
+  catch{
+    console.error("Error:", error);
+  }
+}
+
+async function getUsersCount(){
+  try{
+    const snapshot = await db.collection("users").get();
+    const count = snapshot.size;
+    document.getElementById("usersCount").textContent = count ;
+  }
+  catch{
+    console.error("Error:", error);
+  }
+}
+

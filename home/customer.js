@@ -29,64 +29,17 @@
 
     
 
-    async function loadProducts() {
-  const productSection = document.querySelector(".product-section");
-  productSection.innerHTML = ""; // Clear static products
 
-  try {
-    const snapshot = await db.collection("products").get();
-    snapshot.forEach((doc) => {
-      const product = doc.data();
-      const productId = doc.id;
 
-      const card = document.createElement("div");
-      card.className = "product-card";
-      card.innerHTML = `
-        <div class="product-img">
-          <img src="${product.imageUrl}" alt="${product.name}" />
-          <button class="quick-view-btn">Quick View</button>
-        </div>
-        <div class="product-info">
-          <p class="product-title">${product.name}</p>
-          <p class="product-price">$${product.price}</p>
-          <button class="add-to-cart-btn" data-id="${productId}">Add to Cart</button>
-        </div>
-<button class="add-to-wishlist-btn" data-id="PRODUCT_ID">🤍 Add to Wishlist</button>
-      `;
-
-      productSection.appendChild(card);
-    });
-
-//////////////////////////////////////
-
-    const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
-    addToCartButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const id = btn.dataset.id;
-       alert("Added to cart:", id);
-      });
-    });
-
-  } catch (error) {
-    console.error("Error loading products:", error);
-  }
-}
-
-// utility: يحمّل منتجات مع فلترة حسب الفئة (category)
-async function loadProducts(category = "all") {
+async function loadProducts() {
   const productSection = document.querySelector(".product-section");
   productSection.innerHTML = "";
 
   try {
-    let query = db.collection("products");
-    if (category && category !== "all") {
-      query = query.where("category", "==", category);
-    }
-
-    const snapshot = await query.get();
+    const snapshot = await db.collection("products").get();
 
     if (snapshot.empty) {
-      productSection.innerHTML = "<p>No products found in this category.</p>";
+      productSection.innerHTML = "<p>No products found.</p>";
       return;
     }
 
@@ -100,7 +53,6 @@ async function loadProducts(category = "all") {
       card.innerHTML = `
         <div class="product-img">
           <img src="${product.imageUrl}" alt="${product.name}" />
-          <button class="quick-view-btn">Quick View</button>
         </div>
         <div class="product-info">
           <p class="product-title">${product.name}</p>
@@ -123,7 +75,7 @@ async function loadProducts(category = "all") {
           if (productDoc.exists) {
             const productData = productDoc.data();
             await db.collection("cart").add(productData);
-            alert("✅ Product added to cart:", productData.name);
+            alert(`✅ Product added to cart: ${productData.name}`);
           }
         } catch (err) {
           console.error("Error adding to cart:", err);
@@ -140,14 +92,13 @@ async function loadProducts(category = "all") {
           const productData = productDoc.data();
 
           if (wishlistBtn.classList.contains("active")) {
-            // لو عايز تحذف من الـ wishlist لازم تحفظ الـ doc id وترجع تحذفه
             wishlistBtn.classList.remove("active");
             wishlistBtn.innerHTML = `<i class="fa-regular fa-heart"></i>`;
           } else {
             wishlistBtn.classList.add("active");
             wishlistBtn.innerHTML = `<i class="fa-solid fa-heart"></i>`;
             await db.collection("wishlist").add(productData);
-            alert("💖 Product added to wishlist:", productData.name);
+            alert(`💖 Product added to wishlist: ${productData.name}`);
           }
         } catch (err) {
           console.error("Error toggling wishlist:", err);
@@ -158,27 +109,72 @@ async function loadProducts(category = "all") {
     console.error("Error loading products:", error);
   }
 }
-/////////////////////////////////////////////////////// fillter//////////////////////
+///////////////// fillter//////////////////////
 
 
-const categoryLinks = document.querySelectorAll(".product-categories a");
-categoryLinks.forEach((link) => {
-  link.addEventListener("click", async (e) => {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(".product-categories a");
+  const productSection = document.querySelector(".product-section");
+  let currentFilter = "";
 
-    // تفعيل الـ active class
-    categoryLinks.forEach(l => l.classList.remove("active"));
-    link.classList.add("active");
+  async function showProducts(filter) {
+    currentFilter = (filter || "").toLowerCase();
+    productSection.innerHTML = "";
 
-    // نجيب النص، ونعالجه عشان "All Products" تبقى all
-    let categoryText = link.textContent.trim().toLowerCase();
-    if (categoryText === "all products") categoryText = "all";
+    try {
+      const snapshot = await db.collection("products").get();
 
-    await loadProducts(categoryText);
+      snapshot.forEach(doc => {
+        const p = doc.data();
+        const id = doc.id;
+
+        if (currentFilter) {
+          const desc = (p.description || "").toLowerCase();
+          if (!desc.includes(currentFilter)) return;
+        }
+
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <div class="product-img">
+            <img src="${p.imageUrl}" alt="${p.name}" />
+          </div>
+          <div class="product-info">
+            <p class="product-title">${p.name}</p>
+            <p class="product-price">$${p.price}</p>
+            <button class="add-to-cart-btn" data-id="${id}">Add to Cart</button>
+            <button class="wishlist-btn" data-id="${id}">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+        `;
+        productSection.appendChild(card);
+      });
+
+    } catch (e) {
+      console.error(e);
+      productSection.textContent = "Failed to load products.";
+    }
+  }
+
+  links.forEach(link => {
+    link.onclick = function (e) {
+      e.preventDefault();
+      links.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+
+      const cat = (link.getAttribute("data-category") || "").toLowerCase();
+      if (cat === "all") {
+        showProducts();
+      } else {
+        showProducts(cat);
+      }
+    };
   });
+
 });
 
-// تحميل افتراضي (كل المنتجات)
+
 loadProducts("all");
 
 
