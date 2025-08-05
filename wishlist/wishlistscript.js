@@ -88,12 +88,12 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
         updateSummary();
         alert("All Products Have Been Removed");
-        window.open("../home/index.html","_blank");
+        window.open("../home/customer.html","_blank");
 
     });
 
     continueBtn?.addEventListener("click", function () {
-        window.open("../home/index.html", "_blank");
+        window.open("../home/customer.html", "_blank");
     });
             // add all products to cart page
     proceedBtn?.addEventListener("click", async function () {
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         } else {
             alert("Your wishlist is empty. Please add products to your wishlist first.");
-            window.open("../home/index.html","_blank");
+            window.open("../home/customer.html","_blank");
 
         }
     });

@@ -1,104 +1,104 @@
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-    body {
-      color: #333;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    .main-menu {
-      padding: 17px 0;
-      border-bottom: 1px solid #eee;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .menu-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .nav-links a {
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    .nav-links a:hover {
-      color: #717fe0;
-    }
-    .nav-icons {
-      display: flex;
-      gap: 15px;
-      margin-left: 20px;
-    }
-    .nav-icons i {
-      font-size: 18px;
-      color: #333;
-      transition: color 0.3s;
-    }
-    .nav-icons i:hover {
-      color: #717fe0;
-    }
-    .btnlogin{
-      background-color: #22242c;
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 25px;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background-color 0.3s; 
-    }
-    .btnlogin:hover {
-      background-color: #5a6bd1;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    color: #333;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.main-menu {
+    padding: 17px 0;
+    border-bottom: 1px solid #eee;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.nav-links a {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #717fe0;
+}
+.nav-icons {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+.nav-icons i {
+    font-size: 18px;
+    color: #333;
+    transition: color 0.3s;
+}
+.nav-icons i:hover {
+    color: #717fe0;
+}
+.btnlogin{
+    background-color: #22242c;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+.btnlogin:hover {
+    background-color: #5a6bd1;
+}
 .card-container {
-  background-color: #fff; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 60%; 
-  max-width: 700px; 
-  margin-top: 150px;
-  margin-left: 100px; 
-  overflow: hidden; 
-  float: left;
+    background-color: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%; 
+    max-width: 700px; 
+    margin-top: 150px;
+    margin-left: 100px; 
+    overflow: hidden; 
+    float: left;
     
 }
 .table-header {
-  display: grid;
-  grid-template-columns: 2fr 0.5fr 1fr 1fr 1fr;
-  padding: 15px 20px;
-  border-bottom: 1px solid #eee;
-  font-weight: 800px;
-  color: black;
-  text-transform: uppercase; 
-  font-size: 0.9em;
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 1fr 1fr 1fr;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    font-weight: 800px;
+    color: black;
+    text-transform: uppercase; 
+    font-size: 0.9em;
 }
 .card-item {
-  display: grid;
-  grid-template-columns: 2fr 0.5fr 1fr 1fr 1fr;
-  align-items: center; 
-  padding: 20px;
-  border-bottom: 1px solid #eee;
-  height: 150px;
-  position: relative;
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 1fr 1fr 1fr;
+    align-items: center; 
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    height: 150px;
+    position: relative;
 }
 
 .remove-btn {
@@ -122,99 +122,99 @@
     color: #fff;
 }
 .col-id{
-word-break: break-all;
+    word-break: break-all;
 }
 .col-product {
-  display: flex;
-  align-items: center;
-  gap: 15px; 
-  padding-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    padding-left: 30px;
 }
 .col-product img {
-  width: 80px; 
-  height: 80px;
-  object-fit: cover; 
-  border-radius: 4px;
+    width: 80px; 
+    height: 80px;
+    object-fit: cover; 
+    border-radius: 4px;
 }
 .col-price, .col-total {
-  text-align: center; 
-  font-weight: bold;
-  color: #333;
+    text-align: center; 
+    font-weight: bold;
+    color: #333;
 }
 .col-quantity {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  overflow: hidden; 
-  max-width: 120px; 
-  margin: 0 auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden; 
+    max-width: 120px; 
+    margin: 0 auto; 
 }
 .linequantity{
     display: flex; 
-align-items: center;
-justify-content: center;
-  overflow: hidden; 
-  max-width: 120px; 
-  margin: 0 auto; 
-  font-weight: 800px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    max-width: 120px; 
+    margin: 0 auto; 
+    font-weight: 800px;
 }
 .quantity-btn {
-  background-color: #f8f8f8;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 1em;
-  color: #555;
-  transition: background-color 0.2s ease;
+    background-color: #f8f8f8;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #555;
+    transition: background-color 0.2s ease;
 }
 .quantity-btn:hover {
-  background-color: #e0e0e0;
+    background-color: #e0e0e0;
 }
 .quantity-input {
-  width: 40px;
-  text-align: center;
-  border: none;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  padding: 8px 0; 
+    width: 40px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 8px 0; 
 }
 .quantity-input{
-  border: none;
+    border: none;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 .cart-footer {
-  display: flex;
-  justify-content: flex-end; 
-  align-items: center;
-  padding: 20px;
-  border-top: 1px solid #eee; 
-  gap: 10px; 
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid #eee; 
+    gap: 10px; 
 }
 .coupon-input {
-  flex-grow: 1;
-  padding: 12px 15px;
-  border: 1px solid #ccc;
-  border-radius: 25px;
-  font-size: 1em;
-  max-width: 250px;
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1em;
+    max-width: 250px;
 }
 .removeall-btn {
-  background-color: #e1e1e1;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: bold;
-  color: black;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  transition: background-color  0.4s ease;
-  margin-left: 20px;
+    background-color: #e1e1e1;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    transition: background-color  0.4s ease;
+    margin-left: 20px;
 }
 .removeall-btn:hover {
     border-color: red;
@@ -222,17 +222,17 @@ input[type="number"]::-webkit-inner-spin-button {
     color: #fff;
 }
 .Continue-btn {
-  background-color: #e1e1e1;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: bold;
-  color: black;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  transition: background-color  0.4s ease;
-  margin-left: 200px;
+    background-color: #e1e1e1;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    transition: background-color  0.4s ease;
+    margin-left: 200px;
 }
 .Continue-btn:hover {
     border-color: #717fe0;
@@ -240,50 +240,50 @@ input[type="number"]::-webkit-inner-spin-button {
     color: #fff;
 }
 .aside-cart {
-  background-color: #fff;
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  width: 400px; 
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  float: right;
-  margin-top: 150px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-right: 200px;
+    background-color: #fff;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 400px; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin-top: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 200px;
 }
 .aside-title {
-  font-size: 1.5em;
-  color: #333;
-  margin-bottom: 10px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #eee;
-  text-transform: uppercase; 
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    text-transform: uppercase; 
 }
 .total-row {
-  font-weight: bold;
-  color: #333;
-  font-size: 1.2em;
-  border-top: none; 
-  padding-top: 0;
-  padding-right: 150px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2em;
+    border-top: none; 
+    padding-top: 0;
+    padding-right: 150px;
 }
-.total-row span{
-  padding: 3px;
+.total-row span {
+    padding: 3px;
 }
 .proceed-btn {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 15px 25px;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 1em;
-  transition: background-color 0.2s ease;
-  width: 100%; 
-  margin-top: 20px; 
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+    width: 100%; 
+    margin-top: 20px; 
 }
 .proceed-btn:hover {
     background-color: rgb(164, 105, 105);

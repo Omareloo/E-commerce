@@ -11,18 +11,18 @@
     <div class="main-menu">
     <div class="container">
     <div class="menu-content">
-        <a href="../home/index.html" target="_blank" class="logo">COZA STORE</a>
+        <a href="../home/customer.html" target="_blank" class="logo">COZA STORE</a>
         <div class="nav-links">
-        <a href="../home/index.html" target="_blank">Home</a>
-        <a href="../home/index.html" target="_blank">Shop</a>
-        <a href="../home/index.html" target="_blank">Features</a>
+        <a href="../home/customer.html" target="_blank">Home</a>
+        <a href="../home/customer.html" target="_blank">Shop</a>
+        <a href="../home/customer.html" target="_blank">Features</a>
         <a href="#">Blog</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
         <div class="nav-icons">
         <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
         <a href="../wishlist/wishlist.html" target="_blank"><i class="fas fa-heart"></i></a>
-        <a href="#"><i class="fas fa-search"></i></a>
+        <a href="../home/customer.html" target="_blank"><i class="fas fa-search"></i></a>
         </div>
         <a href="../auth/login.html"><button class="btnlogin">login </button></a>
         </div>
@@ -49,13 +49,16 @@
                 <span>Total: </span>
                 <span>$0.00</span>
             </div>
+            <div class="total-row">
+                <span>Elements in cart: </span>
+                <span id="items-count">0</span>
+            </div>
         <button class="proceed-btn">PROCEED TO CHECKOUT</button>
     </aside>
-      <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-
-  <script src="../firebase_conf.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="../firebase_conf.js"></script>
     <script src="cartscript.js"></script>
 </body>
 </html>
